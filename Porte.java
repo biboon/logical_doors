@@ -1,3 +1,1 @@
-public abstract class Porte extends Composant {
-
-}
+public abstract class Porte extends Composant {}

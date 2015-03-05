@@ -20,5 +20,4 @@ public class Sonde extends Composant {
 			return this.getEtat();
 		}
 	}
-
 }

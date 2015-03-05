@@ -19,5 +19,4 @@ public class LazySonde extends Sonde {
 		}
 		return value;
 	}
-
 }

@@ -9,7 +9,7 @@ public class Circuit {
 	String nom;
 	List<Composant> composants = new ArrayList<Composant>();
 
-	public Circuit(String nom, Composant[] cps){
+	public Circuit(String nom, Composant[] cps) {
 		this.nom = nom;
 		composants.addAll(Arrays.asList(cps));
 		Collections.sort(composants);
@@ -18,16 +18,13 @@ public class Circuit {
 	public List<String> nomenclature() {
 		Iterator<Composant> iter = composants.iterator();
 		List<String> res = new ArrayList<String>();
-		
 		while (iter.hasNext())
 			res.add(iter.next().getId());
-		
 		return res;
 	}
 	
 	public void description(){
 		Iterator<Composant> iter = composants.iterator();
-		
 		System.out.println("Circuit description of: " + nom);
 		while (iter.hasNext())
 			System.out.println(iter.next().description());
@@ -35,7 +32,6 @@ public class Circuit {
 	
 	public void traceEtats() {
 		Iterator<Composant> iter = composants.iterator();
-		
 		System.out.println("Circuit state of: " + nom);
 		while (iter.hasNext())
 			System.out.println(iter.next().traceEtat());
@@ -44,7 +40,6 @@ public class Circuit {
 	public List<Interrupteur> getIns() {
 		List<Interrupteur> res = new ArrayList<Interrupteur>();
 		Iterator<Composant> iter = composants.iterator();
-		
 		while (iter.hasNext()) {
 			Composant currentCp = iter.next();
 			if (currentCp instanceof Interrupteur)
@@ -56,7 +51,6 @@ public class Circuit {
 	public List<Vanne> getOuts() {
 		List<Vanne> res = new ArrayList<Vanne>();
 		Iterator<Composant> iter = composants.iterator();
-		
 		while (iter.hasNext()) {
 			Composant currentCp = iter.next();
 			if (currentCp instanceof Vanne)
@@ -64,5 +58,4 @@ public class Circuit {
 		}
 		return res;
 	}
-
 }

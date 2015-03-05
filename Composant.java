@@ -1,9 +1,7 @@
 public abstract class Composant implements Comparable<Composant> {
 
 	public String getId() {
-
 		return super.toString(); // class@numero renvoye par Object
-
 	}
 
 	public String description() {

@@ -4,11 +4,11 @@ abstract class Porte2Entrees extends Porte {
 	
 	abstract boolean eval() throws NonConnecteException;
 
-	public void setIn1(Composant comp){
+	public void setIn1(Composant comp) {
 		in1 = comp;
 	}
 
-	public void setIn2(Composant comp){
+	public void setIn2(Composant comp) {
 		in2 = comp;
 	}
 
@@ -22,5 +22,4 @@ abstract class Porte2Entrees extends Porte {
 		else
 			return eval();
 	}
-	
 }

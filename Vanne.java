@@ -1,4 +1,5 @@
 public class Vanne extends Composant {
+
 	protected Composant in1;
 
 	public void setIn(Composant comp) {

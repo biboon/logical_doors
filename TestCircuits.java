@@ -1,22 +1,19 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestCircuits
-{
-	private static void printIds(Composant[] tab)
-	{
+public class TestCircuits {
+
+	private static void printIds(Composant[] tab) {
 		for (int i = 0; i < tab.length; i++)
 			System.out.println(tab[i].getId());
 	}
 
-	private static void descriptions(Composant[] tab)
-	{
+	private static void descriptions(Composant[] tab) {
 		for (int i = 0; i < tab.length; i++)
 			System.out.println(tab[i].description());
 	}
 
-	private static void traceEtats(Composant[] tab)
-	{
+	private static void traceEtats(Composant[] tab) {
 		for (int i = 0; i < tab.length; i++) {
 			System.out.println(tab[i].traceEtat());
 		}
@@ -43,8 +40,7 @@ public class TestCircuits
 		System.out.println(outputs.get(0).traceEtat());
 	}
 
-	public static void main(String[] args)
-	{
+	public static void main(String[] args) {
 		//Construction
 		Composant[] composants = new Composant[7];
 		composants[0] = new Interrupteur();
