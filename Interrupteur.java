@@ -1,16 +1,16 @@
 public class Interrupteur extends Composant {
 
-	protected boolean etat;
+    protected boolean etat;
 
-	public void on() {
-		etat = true;
-	}
+    public void on() {
+        etat = true;
+    }
 
-	public void off() {
-		etat = false;
-	}
+    public void off() {
+        etat = false;
+    }
 
-	public boolean getEtat() throws NonConnecteException {
-		return etat;
-	}
+    public boolean getEtat() throws NonConnecteException {
+        return etat;
+    }
 }

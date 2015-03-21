@@ -1,19 +1,19 @@
 public class Vanne extends Composant {
 
-	protected Composant in1;
+    protected Composant in1;
 
-	public void setIn(Composant comp) {
-		in1 = comp;
-	}
+    public void setIn(Composant comp) {
+        in1 = comp;
+    }
 
-	public String description() {
-	  return super.description() + " in1: " + ((in1 != null) ? in1.getId() : "non connecte");
-	}
+    public String description() {
+      return super.description() + " in1: " + ((in1 != null) ? in1.getId() : "non connecte");
+    }
 
-	public boolean getEtat() throws NonConnecteException {
-		if (in1 == null)
-			throw new NonConnecteException();
-		else
-			return in1.getEtat();
-	}
+    public boolean getEtat() throws NonConnecteException {
+        if (in1 == null)
+            throw new NonConnecteException();
+        else
+            return in1.getEtat();
+    }
 }

@@ -1,28 +1,18 @@
-JFLAGS = -g
 JC = javac
+JFLAGS = -g
+
 .SUFFIXES: .java .class
 .java.class:
 	$(JC) $(JFLAGS) $*.java
 
-CLASSES = \
-	And.java \
-	Composant.java \
-	Interrupteur.java \
-	LazySonde.java \
-	NonConnecteException.java \
-	Not.java \
-	Or.java \
-	Porte2Entrees.java \
-	Porte.java \
-	Sonde.java \
-	TestCircuits.java \
-	Vanne.java \
-	Circuit.java \
-	SondesTable.java
+JAVASRC = $(shell ls *.java)
+CLASSES = $(JAVASRC:.java=.class)
+
+all: classes
 
 default: classes
 
 classes: $(CLASSES:.java=.class)
 
 clean:
-	$(RM) *.class
+	rm -f *.class
