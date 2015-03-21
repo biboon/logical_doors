@@ -11,6 +11,14 @@ abstract class Porte2Entrees extends Porte {
 	public void setIn2(Composant comp) {
 		in2 = comp;
 	}
+	
+	public Composant getIn1() {
+	    return in1;
+	}
+	
+	public Composant getIn2() {
+	    return in2;
+	}
 
 	public String description() {
 		return super.description() + " in1: " + ((in1 != null) ? in1.getId() : "non connecte") + " in2: " + ((in2 != null) ? in2.getId() : "non connecte");

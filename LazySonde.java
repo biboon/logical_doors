@@ -19,4 +19,8 @@ public class LazySonde extends Sonde {
 		}
 		return value;
 	}
+	
+	public void reset(){
+	    isSet = false;
+	}
 }

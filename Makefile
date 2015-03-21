@@ -17,7 +17,8 @@ CLASSES = \
 	Sonde.java \
 	TestCircuits.java \
 	Vanne.java \
-	Circuit.java
+	Circuit.java \
+	SondesTable.java
 
 default: classes
 

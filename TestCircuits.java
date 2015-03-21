@@ -21,23 +21,9 @@ public class TestCircuits {
 	
 	private static void test(Circuit circ) {
 		//circ.nomenclature();
-		circ.description();
-		List<Interrupteur> inputs = circ.getIns();
-		List<Vanne> outputs = circ.getOuts();
-		
-		System.out.println("\nInputs:");
-		for (int i = 0; i < inputs.size(); i++)
-			System.out.println(inputs.get(i).getId());
-		
-		System.out.println("\nOutputs:");
-		for (int i = 0; i < outputs.size(); i++)
-			System.out.println(outputs.get(i).getId());
-		
-		System.out.println("\nSetting input values...");
-		inputs.get(0).on();
-		inputs.get(1).on();
-		inputs.get(2).off();
-		System.out.println(outputs.get(0).traceEtat());
+		circ.traceEtats();
+		circ.probe();
+		circ.traceEtats();
 	}
 
 	public static void main(String[] args) {
@@ -56,7 +42,7 @@ public class TestCircuits {
 		((And)composants[4]).setIn1(composants[3]);
 		((And)composants[4]).setIn2(composants[5]);
 		((Or)composants[3]).setIn1(composants[0]);
-		//((Or)composants[3]).setIn1(new LazySonde((Or)composants[3], "in1"));
+		//composants[0] = new LazySonde((Or)composants[3], "in1");
 		((Or)composants[3]).setIn2(composants[1]);
 		((Not)composants[5]).setIn(composants[2]);
 		//((Not)composants[5]).setIn(new Sonde((Not)composants[5], "in1"));

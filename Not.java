@@ -1,19 +1,23 @@
 public class Not extends Porte {
 
-	protected Composant in1;
+	protected Composant in;
 
 	public void setIn(Composant comp) {
-		in1 = comp;
+		in = comp;
+	}
+	
+	public Composant getIn() {
+	    return in;
 	}
 
 	public String description() {
-		return super.description() + " in1: " + ((in1 != null) ? in1.getId() : "non connecte");
+		return super.description() + " in: " + ((in != null) ? in.getId() : "non connecte");
 	}
 
 	public boolean getEtat() throws NonConnecteException {
-		if (in1 == null)
+		if (in == null)
 			throw new NonConnecteException();
 		else
-			return !in1.getEtat();
+			return !in.getEtat();
 	}
 }
