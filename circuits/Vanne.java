@@ -1,3 +1,5 @@
+package circuits;
+
 public class Vanne extends Composant {
 
     protected Composant in1;

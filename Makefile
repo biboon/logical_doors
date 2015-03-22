@@ -1,18 +1,20 @@
 JC = javac
 JFLAGS = -g
+JPATH = -cp .:./circuits/
+
+CIRCUIT_SRC=$(shell ls circuits/*.java)
+CIRCUIT_CLASS=$(CIRCUIT_SRC:.java=.class)
+TEST_SRC=$(shell ls test/*.java)
+TEST_CLASS=$(TEST_SRC:.java=.class)
 
 .SUFFIXES: .java .class
 .java.class:
-	$(JC) $(JFLAGS) $*.java
+	$(JC) $(JFLAGS) $(JPATH) $*.java
 
-JAVASRC = $(shell ls *.java)
-CLASSES = $(JAVASRC:.java=.class)
-
-all: classes
-
-default: classes
-
-classes: $(CLASSES:.java=.class)
+all: circuits test
+circuits: $(CIRCUIT_CLASS:.java=.class)
+test: $(TEST_CLASS:.java=.class)
 
 clean:
-	rm -f *.class
+	rm -f circuits/*.class
+	rm -f test/*.class

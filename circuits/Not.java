@@ -1,3 +1,5 @@
+package circuits;
+
 public class Not extends Porte {
 
     protected Composant in;

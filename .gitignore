@@ -1,2 +1,3 @@
 sources/*
-*.class
+circuits/*.class
+test/*.class
