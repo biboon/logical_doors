@@ -27,6 +27,9 @@ public class TestCircuits {
         circ.traceEtats();
         circ.probe();
         circ.traceEtats();
+        circ.save("output.txt");
+        circ.load("output.txt");
+        circ.traceEtats();
     }
 
     public static void main(String[] args) {

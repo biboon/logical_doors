@@ -1,5 +1,5 @@
 JC = javac
-JFLAGS = -g
+JFLAGS = -g # -Xlint:unchecked
 JPATH = -cp .:./circuits/
 
 CIRCUIT_SRC=$(shell ls circuits/*.java)

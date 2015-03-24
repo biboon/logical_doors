@@ -1,3 +1,4 @@
 sources/*
 circuits/*.class
 test/*.class
+output.txt

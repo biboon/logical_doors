@@ -8,6 +8,13 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.Scanner;
+
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.io.IOException;
 
 public class Circuit {
 
@@ -129,6 +136,32 @@ public class Circuit {
     
     public void resetSondes() {
         tableSondes.resetSondes();
+    }
+    
+    public void save(String filename) {
+        try {
+            FileOutputStream file = new FileOutputStream(filename);
+            ObjectOutputStream out = new ObjectOutputStream(file);
+            out.writeObject(nom);
+            /* Writing composants table */
+            out.writeObject(composants);
+            out.close();
+        } catch (IOException e) {
+            System.out.println("Can't save file: " + e + " at "+ filename);
+        }
+    }
+    
+    public void load(String filename) {
+        try {
+            FileInputStream file = new FileInputStream(filename);
+            ObjectInputStream in = new ObjectInputStream(file);
+            nom = (String) in.readObject();
+            composants.clear();
+            composants = (List<Composant>) in.readObject();
+            in.close();
+        } catch (Exception e) {
+            System.out.println("Error:" + e);
+        }
     }
 }
 
